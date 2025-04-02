@@ -412,7 +412,6 @@ public class data extends javax.swing.JFrame {
            String jurusanBaru = tabel.getValueAt(selectTabel,4).toString();
            
            try(Connection conn = koneksi.getConnection()){
-               System.out.println("ID yang dikirim ke database: " + id);
                String queryCek = "SELECT nama, jurusan, nim FROM data WHERE id = ?";
                try(PreparedStatement stmt = conn.prepareStatement(queryCek)){
                    stmt.setString(1, id);
